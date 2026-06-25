@@ -13,6 +13,7 @@ import TestPracticeCard from "@/components/TestPracticeCard";
 import LearningProfile from "@/components/LearningProfile";
 import StoryList from "@/components/StoryList";
 import HonorBoard from "@/components/HonorBoard";
+import TeacherIntro from "@/components/TeacherIntro";
 
 const { Content } = Layout;
 const { useBreakpoint } = Grid;
@@ -124,6 +125,9 @@ export default function HomePage() {
                 <LearningProfile />
               </div>
             </div>
+
+            {/* Giới thiệu giáo viên */}
+            <TeacherIntro />
           </div>
         </div>
       </Content>

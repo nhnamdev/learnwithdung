@@ -11,11 +11,12 @@ import {
   RocketOutlined,
 } from "@ant-design/icons";
 
+import Link from "next/link";
+
 interface NavItem {
   key: string;
   label: string;
   icon: React.ReactNode;
-  active?: boolean;
 }
 
 const NAV_ITEMS: NavItem[] = [
@@ -23,7 +24,6 @@ const NAV_ITEMS: NavItem[] = [
     key: "home",
     label: "Trang chủ",
     icon: <HomeOutlined />,
-    active: true,
   },
   {
     key: "my-courses",
@@ -52,24 +52,38 @@ const NAV_ITEMS: NavItem[] = [
   },
 ];
 
-export default function AppSidebar() {
+interface AppSidebarProps {
+  activeKey?: string;
+}
+
+export default function AppSidebar({ activeKey = "home" }: AppSidebarProps) {
   return (
     <nav className="sidebar-nav">
       {/* Navigation Items */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 2 }}>
-        {NAV_ITEMS.map((item) => (
-          <div key={item.key} className={`nav-item${item.active ? " active" : ""}`}>
-            <span className="nav-item-icon">{item.icon}</span>
-            <span className="nav-item-label">{item.label}</span>
-          </div>
-        ))}
+        {NAV_ITEMS.map((item) => {
+          const isActive = item.key === activeKey;
+          const href = item.key === "home" ? "/" : `/${item.key}`;
+          return (
+            <Link
+              key={item.key}
+              href={href}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <div className={`nav-item${isActive ? " active" : ""}`}>
+                <span className="nav-item-icon">{item.icon}</span>
+                <span className="nav-item-label">{item.label}</span>
+              </div>
+            </Link>
+          );
+        })}
       </div>
 
       {/* CTA Button — Thi thử Ngay */}
-      <a href="#" className="sidebar-cta-btn">
+      <Link href="/mock-test" className="sidebar-cta-btn" style={{ textDecoration: "none" }}>
         <RocketOutlined style={{ fontSize: 16 }} />
         <span>Thi thử Ngay</span>
-      </a>
+      </Link>
     </nav>
   );
 }

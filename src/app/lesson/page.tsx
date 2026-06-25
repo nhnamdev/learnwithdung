@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Layout, Grid, Drawer, Breadcrumb } from "antd";
 import { MenuOutlined, HomeOutlined } from "@ant-design/icons";
+import Link from "next/link";
 import AppHeader from "@/components/AppHeader";
 import AppSidebar from "@/components/AppSidebar";
 import VideoPlayer from "@/components/lesson/VideoPlayer";
@@ -30,65 +31,79 @@ const DOCUMENTS = [
 const HOMEWORK_TASKS = ["EZ Vocab"];
 
 export default function LessonPage() {
-  const screens = useBreakpoint();
-  const isMobile = !screens.md;
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [sidebarPinned, setSidebarPinned] = useState(false);
+  const screens = useBreakpoint();
+  const isDesktop = !!screens.lg;
+
+  const handleMenuClick = () => {
+    if (isDesktop) {
+      setSidebarPinned((prev) => !prev);
+    } else {
+      setDrawerOpen(true);
+    }
+  };
 
   return (
-    <div className="lp-page-root">
+    <Layout className="app-layout" style={{ background: "rgb(249, 245, 250)" }}>
       {/* ── Sticky header ── */}
-      <AppHeader onMenuClick={() => setDrawerOpen(true)} />
+      <AppHeader onMenuClick={handleMenuClick} />
 
-      {/* ── Breadcrumb ── */}
-      <div className="lp-breadcrumb-bar">
-        <div className="lp-breadcrumb-inner">
-          <Breadcrumb
-            separator="›"
-            items={[
-              { title: "Trang chủ" },
-              { title: "Danh mục khoá học" },
-              { title: "Ngữ pháp Ứng dụng (2027)" },
-              { title: "CHUYÊN ĐỀ 01: TỪ LOẠI | LÝ THUYẾT TRỌNG TÂM VÀ ỨNG DỤNG" },
-              {
-                title: (
-                  <span style={{ color: "#f40c44" }}>Từ loại (Lý thuyết - Buổi 1)</span>
-                ),
-              },
-            ]}
-            style={{ fontSize: 13 }}
-          />
-        </div>
-      </div>
+      {/* Hover trigger strip — desktop only */}
+      {isDesktop && <div className="sider-hover-trigger" />}
 
-      <Layout style={{ background: "transparent", minHeight: "calc(100vh - 60px)" }}>
-        {/* ── Desktop Sidebar ── */}
-        {!isMobile && (
-          <div className="app-sider lp-sider">
-            <div className="sider-hover-trigger">
-              <AppSidebar />
-            </div>
-          </div>
-        )}
-
-        {/* ── Mobile Drawer ── */}
-        <Drawer
-          open={drawerOpen}
-          onClose={() => setDrawerOpen(false)}
-          placement="left"
-          size="default"
-          styles={{ body: { padding: 0 } }}
-          title={null}
+      {/* Desktop Sidebar */}
+      {isDesktop && (
+        <div
+          className={`app-sider${sidebarPinned ? " sider-pinned" : ""}`}
+          style={{ width: 240 }}
         >
-          <AppSidebar />
-        </Drawer>
+          <AppSidebar activeKey="my-courses" />
+        </div>
+      )}
 
-        {/* ── Main Content ── */}
-        <Content className="lp-content">
-          <div className={`lp-main-grid${isMobile ? " lp-main-grid-mobile" : ""}`}>
+      {/* Mobile/Tablet Drawer Sidebar */}
+      <Drawer
+        placement="left"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        size="default"
+        styles={{ body: { padding: 0 } }}
+        style={{ top: 64 }}
+        title={null}
+        closable={false}
+      >
+        <AppSidebar activeKey="my-courses" />
+      </Drawer>
 
+      {/* ── Main Content ── */}
+      <Content className="app-content" style={{ background: "transparent" }}>
+        {/* ── Breadcrumb ── */}
+        <div className="lp-breadcrumb-bar">
+          <div className="lp-breadcrumb-inner">
+            <Breadcrumb
+              separator="›"
+              items={[
+                { title: <Link href="/" style={{ color: "inherit" }}>Trang chủ</Link> },
+                { title: <Link href="/my-courses" style={{ color: "inherit" }}>Danh mục khoá học</Link> },
+                { title: <Link href="/my-courses" style={{ color: "inherit" }}>Ngữ pháp Ứng dụng (2027)</Link> },
+                { title: <Link href="/lesson" style={{ color: "inherit" }}>CHUYÊN ĐỀ 01: TỪ LOẠI | LÝ THUYẾT TRỌNG TÂM VÀ ỨNG DỤNG</Link> },
+                {
+                  title: (
+                    <span style={{ color: "#f40c44" }}>Từ loại (Lý thuyết - Buổi 1)</span>
+                  ),
+                },
+              ]}
+              style={{ fontSize: 13 }}
+            />
+          </div>
+        </div>
+
+        {/* ── Grid Container ── */}
+        <div className="lp-grid-container">
+          <div className={`lp-main-grid${!isDesktop ? " lp-main-grid-mobile" : ""}`}>
             {/* ── LEFT: Video + docs + homework ── */}
             <div className="lp-left-col">
-
               {/* Video Player */}
               <VideoPlayer
                 title="Từ loại (Lý thuyết - Buổi 1)"
@@ -117,8 +132,8 @@ export default function LessonPage() {
             </div>
 
             {/* ── RIGHT: View selector + Discussion + Playlist ── */}
-            <div className={`lp-right-col${isMobile ? "" : " lp-right-sticky"}`}>
-              <div className="lp-card">
+            <div className={`lp-right-col${isDesktop ? " lp-right-sticky" : ""}`}>
+              <div className="lp-card" style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
                 {/* View mode tabs */}
                 <ViewModeSelector />
 
@@ -130,8 +145,8 @@ export default function LessonPage() {
               <LessonPlaylist />
             </div>
           </div>
-        </Content>
-      </Layout>
-    </div>
+        </div>
+      </Content>
+    </Layout>
   );
 }
