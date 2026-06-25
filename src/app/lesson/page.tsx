@@ -75,7 +75,7 @@ export default function LessonPage() {
           open={drawerOpen}
           onClose={() => setDrawerOpen(false)}
           placement="left"
-          width={260}
+          size="default"
           styles={{ body: { padding: 0 } }}
           title={null}
         >
