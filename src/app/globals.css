@@ -1451,3 +1451,681 @@ body {
   }
 }
 
+
+/* =============================================
+   Lesson Page (lp-*)
+   ============================================= */
+
+.lp-page-root {
+  min-height: 100vh;
+  background: rgb(249, 245, 250);
+}
+
+/* breadcrumb */
+.lp-breadcrumb-bar {
+  background: rgb(232, 223, 234);
+  padding: 0 10px;
+}
+.lp-breadcrumb-inner {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 7px 24px;
+}
+
+/* sider reuse */
+.lp-sider {
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+}
+
+/* main content */
+.lp-content {
+  padding: 24px 16px 60px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* two-column grid */
+.lp-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 16px;
+  max-width: 1400px;
+}
+
+.lp-main-grid-mobile {
+  grid-template-columns: 1fr;
+}
+
+.lp-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.lp-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.lp-right-sticky {
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+/* card base */
+.lp-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px 0px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* -- Video Player -- */
+.lp-video-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.lp-star-icon {
+  font-size: 22px;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.lp-views-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #566681;
+}
+
+.lp-views-count {
+  font-weight: 600;
+  color: #f40c44;
+}
+
+.lp-video-wrap {
+  position: relative;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.lp-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.lp-play-btn {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lp-video-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 146px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.lp-video-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.lp-video-bg {
+  width: 100%;
+  height: 100%;
+  background: #111;
+}
+
+/* progress bar */
+.lp-progress-wrap {
+  position: absolute;
+  bottom: 38px;
+  left: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.lp-progress-track {
+  position: relative;
+  height: 3px;
+  background: rgba(255,255,255,0.35);
+  border-radius: 2px;
+}
+
+.lp-progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #f00;
+  border-radius: 2px;
+}
+
+.lp-quiz-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+/* controls */
+.lp-controls {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  z-index: 10;
+}
+
+.lp-controls-left {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.lp-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lp-ctrl-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lp-time {
+  color: white;
+  font-size: 13px;
+  margin: 0 8px;
+  text-shadow: rgba(0,0,0,0.5) 0 0 2px;
+}
+
+.lp-speed {
+  color: white;
+  font-size: 14px;
+  text-shadow: rgba(0,0,0,0.5) 0 0 2px;
+}
+
+/* quiz row under video */
+.lp-quiz-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10px;
+  margin: 24px 0;
+  background: rgb(249, 245, 250);
+  border-radius: 8px;
+  font-size: 22px;
+}
+
+/* -- Homework bar -- */
+.lp-homework-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: rgb(249, 245, 250);
+  border-radius: 8px;
+  padding: 12px;
+  gap: 8px;
+  min-height: 62px;
+}
+
+.lp-homework-label {
+  font-weight: 600;
+  color: #1f242e;
+}
+
+.lp-homework-tasks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: 16px;
+}
+
+.lp-homework-task-btn {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  background: rgb(0, 156, 244);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  gap: 6px;
+}
+
+/* -- Documents -- */
+.lp-docs-section {
+  padding-top: 0;
+}
+
+.lp-docs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+
+.lp-docs-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.lp-docs-download-all {
+  font-weight: 600;
+  color: #0071f9;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.lp-doc-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.lp-doc-link {
+  color: #1570ef;
+  font-size: 14px;
+  text-decoration: underline;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lp-doc-dl-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+/* -- View Mode -- */
+.lp-viewmode-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgb(217, 221, 227);
+  flex-wrap: wrap;
+}
+
+.lp-viewmode-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #566681;
+  margin-right: 4px;
+}
+
+.lp-viewmode-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  color: #6b7280;
+  font-size: 18px;
+  transition: background 0.15s;
+}
+
+.lp-viewmode-btn:hover {
+  background: #f0f4f8;
+}
+
+.lp-viewmode-btn-active {
+  color: #0071f9;
+}
+
+/* -- Discussion -- */
+.lp-discussion {
+  padding-top: 12px;
+}
+
+.lp-discussion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.lp-discussion-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.lp-discussion-refresh {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+/* comment input */
+.lp-comment-input-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 4;
+}
+
+.lp-comment-input-box {
+  flex: 1;
+  background: rgb(249, 249, 249);
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.lp-comment-textarea {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.lp-comment-input-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lp-input-action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  color: #566681;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* comments list */
+.lp-comments-list {
+  max-height: 476px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+}
+
+.lp-comment {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.lp-comment-thread-line {
+  position: absolute;
+  left: 15px;
+  top: 30px;
+  width: 1px;
+  height: calc(100% - 18px);
+  background: rgb(217, 221, 227);
+}
+
+.lp-comment-avatar-wrap {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.lp-comment-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.lp-comment-body {
+  flex: 1;
+  padding-left: 8px;
+  min-width: 0;
+}
+
+.lp-comment-bubble {
+  background: rgb(249, 249, 249);
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 98%;
+}
+
+.lp-comment-bubble-ta {
+  color: rgb(0, 128, 0);
+}
+
+.lp-comment-author {
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.lp-ta-name {
+  color: #1f242e;
+}
+
+.lp-comment-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  font-size: 12px;
+  color: #6b7280;
+  flex-wrap: wrap;
+}
+
+.lp-meta-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+}
+
+.lp-meta-time {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.lp-meta-reply-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1570ef;
+  font-size: 12px;
+  padding: 4px;
+}
+
+/* replies */
+.lp-reply {
+  display: flex;
+  position: relative;
+  margin-top: 12px;
+  margin-left: 38px;
+}
+
+.lp-reply-corner {
+  position: absolute;
+  left: -23px;
+  top: 0;
+  width: 24px;
+  height: 15px;
+  border-left: 1px solid rgb(217, 221, 227);
+  border-bottom: 1px solid rgb(217, 221, 227);
+  border-radius: 0 0 0 16px;
+}
+
+.lp-reply-line {
+  position: absolute;
+  left: -23px;
+  top: 0;
+  width: 1px;
+  height: calc(100% + 12px);
+  background: rgb(217, 221, 227);
+}
+
+/* see more */
+.lp-see-more-row {
+  text-align: right;
+  padding: 10px 10px 0;
+}
+
+.lp-see-more-btn {
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 500;
+  cursor: pointer;
+  color: #1f242e;
+}
+
+/* -- Playlist -- */
+.lp-playlist {
+  padding: 12px;
+}
+
+.lp-playlist-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lp-playlist-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 0;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.lp-playlist-item-border {
+  border-bottom: 1px solid rgb(217, 221, 227);
+}
+
+.lp-playlist-item-active {
+  background: rgba(244, 12, 68, 0.04);
+  border-radius: 6px;
+  padding-left: 4px;
+}
+
+.lp-playlist-icon {
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lp-playlist-title {
+  color: #566681;
+  font-weight: 500;
+}
+
+.lp-playlist-title-active {
+  color: #f40c44;
+  font-weight: 600;
+}
+
+/* -- Mobile responsive -- */
+@media (max-width: 767px) {
+  .lp-content {
+    padding: 12px 8px 40px;
+  }
+
+  .lp-main-grid-mobile .lp-right-col {
+    order: -1;
+  }
+
+  .lp-video-title {
+    font-size: 16px;
+  }
+
+  .lp-card {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .lp-main-grid {
+    grid-template-columns: 1fr 340px;
+  }
+}
