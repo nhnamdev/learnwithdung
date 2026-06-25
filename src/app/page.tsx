@@ -11,6 +11,7 @@ import StudyPlanCard from "@/components/StudyPlanCard";
 import MyCoursesSection from "@/components/MyCoursesSection";
 import TestPracticeCard from "@/components/TestPracticeCard";
 import LearningProfile from "@/components/LearningProfile";
+import StoryList from "@/components/StoryList";
 
 const { Content } = Layout;
 const { useBreakpoint } = Grid;
@@ -72,6 +73,9 @@ export default function HomePage() {
           <div className="content-wrapper">
             {/* Greeting */}
             <GreetingSection />
+
+            {/* Story List */}
+            <StoryList />
 
             {/* Two-column layout dùng Ant Design breakpoint */}
             <div className="page-columns">

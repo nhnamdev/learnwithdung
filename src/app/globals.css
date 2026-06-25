@@ -394,8 +394,7 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ebf0f4;
+  padding-bottom: 16px;
   margin-bottom: 0;
 }
 
@@ -943,8 +942,197 @@ body {
   color: #4b5563;
 }
 
+
 .summary-value {
   font-weight: 700;
   font-size: 14px;
   flex-shrink: 0;
+}
+
+/* =============================================
+   Story List
+   ============================================= */
+
+.story-section {
+  margin-bottom: 4px;
+}
+
+.story-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: visible;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-left: -4px;
+  margin-right: -4px;
+  padding: 4px 4px 12px;
+}
+
+.story-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.story-list {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: max-content;
+  align-items: flex-start;
+}
+
+/* ── Base story card ─── */
+.story-card {
+  position: relative;
+  width: 112px;
+  height: 199px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: inherit;
+}
+
+.story-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.story-card-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+.story-avatar-ring {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #0071f9;
+  padding: 2px;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.story-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.story-card-name {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  padding: 0 8px 10px;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+/* ── Create story card ─── */
+.story-create {
+  background: white;
+  border: 1px solid #ebf0f4;
+}
+
+.story-create-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 115px;
+  background: linear-gradient(135deg, #cce8ff 0%, #e1effe 100%);
+}
+
+.story-create-plus {
+  position: absolute;
+  top: 92px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 36px;
+  background: #0071f9;
+  border-radius: 50%;
+  border: 3px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 113, 249, 0.4);
+  z-index: 2;
+}
+
+.story-create-name {
+  color: #1f242e;
+  text-align: center;
+  padding: 44px 8px 10px;
+  font-weight: 700;
+  font-size: 13px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Discovery card ─── */
+.story-discovery {
+  background: #f0f7ff;
+  border: 1px solid #cce8ff;
+}
+
+.story-discovery-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #e8f4ff 0%, #cce8ff 100%);
+}
+
+.story-discovery-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  width: 52px;
+  height: 52px;
+  background: #0071f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 113, 249, 0.35);
+  z-index: 2;
+}
+
+.story-discovery-name {
+  position: relative;
+  z-index: 2;
+  color: #1f242e;
+  text-align: center;
+  padding: 0 8px 10px;
+  font-weight: 700;
+  font-size: 12px;
 }
