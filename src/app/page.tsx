@@ -12,6 +12,7 @@ import MyCoursesSection from "@/components/MyCoursesSection";
 import TestPracticeCard from "@/components/TestPracticeCard";
 import LearningProfile from "@/components/LearningProfile";
 import StoryList from "@/components/StoryList";
+import HonorBoard from "@/components/HonorBoard";
 
 const { Content } = Layout;
 const { useBreakpoint } = Grid;
@@ -76,6 +77,9 @@ export default function HomePage() {
 
             {/* Story List */}
             <StoryList />
+
+            {/* Bảng Vàng */}
+            <HonorBoard />
 
             {/* Two-column layout dùng Ant Design breakpoint */}
             <div className="page-columns">

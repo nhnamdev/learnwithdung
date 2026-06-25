@@ -7,7 +7,7 @@ const { useBreakpoint } = Grid;
 
 const ICONS = {
   menu: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F1a44982fbf1eaacf09c836f34b9c0eeae7df924f.svg?generation=1782387731977093&alt=media",
-  logo: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F57834f9ced91f6974ed6dd5d7c8e85e237954e4e.svg?generation=1782387690168006&alt=media",
+  logo: "/logo.png",
   programIcon: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F312127ec3e81c86b48251e31b8f56ec33dccce7e.svg?generation=1782387731968819&alt=media",
   chevronDown: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F1ceef3f6517e9ff843accde2489969cb30b1c560.svg?generation=1782387731971476&alt=media",
   streak: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F8ba239a060b337b5175899886f196e5c3a68e05c.svg?generation=1782387731989024&alt=media",
