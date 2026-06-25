@@ -16,32 +16,27 @@ const ICONS = {
 export default function TestPracticeCard() {
   return (
     <div className="test-practice-card">
-      {/* Test Info */}
       <div className="test-info">
         <img src={ICONS.thumbnail} alt="test-set-avatar" className="test-thumbnail" />
 
         <div className="test-details">
           {/* In Progress Badge */}
           <div className="test-in-progress-badge">
-            <img src={ICONS.testInProgress} alt="" style={{ width: 20, height: 20 }} />
+            <img src={ICONS.testInProgress} alt="" style={{ width: 18, height: 18 }} />
             <span>Đề đang làm</span>
           </div>
 
           {/* Test Title */}
           <div className="test-title">[Mar 2026] Real tests Speaking &amp; Writing</div>
 
-          {/* Bottom row: subtitle + continue button */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "flex-end",
-              justifyContent: "space-between",
-              gap: 12,
-              flexWrap: "wrap",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
-              <img src={ICONS.testPaper} alt="" style={{ width: 13, height: 13, marginTop: 3, flexShrink: 0 }} />
+          {/* Bottom row */}
+          <div className="test-bottom-row">
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 6, minWidth: 0 }}>
+              <img
+                src={ICONS.testPaper}
+                alt=""
+                style={{ width: 13, height: 13, marginTop: 2, flexShrink: 0 }}
+              />
               <div className="test-subtitle">Real tests Speaking Test 1</div>
             </div>
 

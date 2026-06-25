@@ -18,7 +18,7 @@ const ICONS = {
 export default function RecentLessonCard() {
   return (
     <div className="lesson-card">
-      <div style={{ display: "flex", alignItems: "flex-start", position: "relative", gap: 20 }}>
+      <div style={{ display: "flex", alignItems: "flex-start", gap: 16 }}>
         {/* Lesson Number Badge */}
         <div className="lesson-number-badge">
           <div className="lesson-number-badge-inner">
@@ -44,9 +44,17 @@ export default function RecentLessonCard() {
 
         {/* Lesson Info */}
         <div style={{ flex: 1, minWidth: 0, marginTop: -6 }}>
-          <h5 className="lesson-title">
-            [Listening] Part 3 - Làm quen với dạng câu hỏi hội thoại
-          </h5>
+          <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 8 }}>
+            <h5 className="lesson-title" style={{ flex: 1, minWidth: 0 }}>
+              [Listening] Part 3 - Làm quen với dạng câu hỏi hội thoại
+            </h5>
+            {/* Bookmark Icons */}
+            <div style={{ display: "flex", alignItems: "center", gap: 4, flexShrink: 0 }}>
+              {[ICONS.bookmark1, ICONS.bookmark2, ICONS.bookmark3].map((icon, i) => (
+                <img key={i} src={icon} alt="" style={{ width: 18, height: 18 }} />
+              ))}
+            </div>
+          </div>
 
           <div
             style={{
@@ -59,10 +67,10 @@ export default function RecentLessonCard() {
             }}
           >
             {/* Progress */}
-            <div style={{ display: "flex", alignItems: "center", gap: 12, color: "#6b7280" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, color: "#6b7280", fontSize: 14, flexWrap: "wrap" }}>
               <span>0/ Section</span>
               <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                <img src={ICONS.clock} alt="clock" style={{ width: 20, height: 20 }} />
+                <img src={ICONS.clock} alt="clock" style={{ width: 18, height: 18 }} />
                 <span>0/6</span>
               </div>
             </div>
@@ -70,17 +78,8 @@ export default function RecentLessonCard() {
             {/* Continue */}
             <div className="lesson-continue-btn">
               <span>Tiếp tục học</span>
-              <span style={{ fontSize: 14 }}>›</span>
+              <span>›</span>
             </div>
-          </div>
-        </div>
-
-        {/* Bookmark Icons */}
-        <div style={{ position: "absolute", top: 1, right: 0 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-            {[ICONS.bookmark1, ICONS.bookmark2, ICONS.bookmark3].map((icon, i) => (
-              <img key={i} src={icon} alt="" style={{ width: 20, height: 20 }} />
-            ))}
           </div>
         </div>
       </div>

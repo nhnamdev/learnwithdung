@@ -1,6 +1,9 @@
 "use client";
 
 import React from "react";
+import { Grid } from "antd";
+
+const { useBreakpoint } = Grid;
 
 const ICONS = {
   menu: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F1a44982fbf1eaacf09c836f34b9c0eeae7df924f.svg?generation=1782387731977093&alt=media",
@@ -17,35 +20,48 @@ interface AppHeaderProps {
 }
 
 export default function AppHeader({ onMenuClick }: AppHeaderProps) {
+  const screens = useBreakpoint();
+  const isMobile = !screens.sm;
+  const isTablet = screens.sm && !screens.lg;
+
   return (
     <header className="app-header">
       {/* Left Section */}
       <div className="header-left">
         {/* Hamburger / Menu Button */}
-        <button className="menu-trigger-btn" onClick={onMenuClick} aria-label="Mở menu">
+        <button
+          className="menu-trigger-btn"
+          onClick={onMenuClick}
+          aria-label="Mở menu"
+          style={{ flexShrink: 0 }}
+        >
           <img src={ICONS.menu} alt="menu" style={{ width: 20, height: 20 }} />
         </button>
 
         {/* Logo */}
-        <div style={{ overflow: "hidden", height: 30 }}>
+        <div style={{ overflow: "hidden", height: 30, flexShrink: 0 }}>
           <img src={ICONS.logo} alt="logo-prep" className="logo-img" />
         </div>
 
-        {/* Program Badge */}
-        <div className="program-badge">
-          <img src={ICONS.programIcon} alt="program" style={{ width: 16, height: 16 }} />
-          <span className="program-badge-text">Chương trình bạn chọn:</span>
-          <span className="program-badge-value">TOEIC</span>
-          <img src={ICONS.chevronDown} alt="chevron" style={{ width: 16, height: 16 }} />
-        </div>
+        {/* Program Badge — ẩn label dài trên mobile */}
+        {!isMobile && (
+          <div className="program-badge">
+            <img src={ICONS.programIcon} alt="program" style={{ width: 16, height: 16 }} />
+            {!isTablet && (
+              <span className="program-badge-text">Chương trình bạn chọn:</span>
+            )}
+            <span className="program-badge-value">TOEIC</span>
+            <img src={ICONS.chevronDown} alt="chevron" style={{ width: 16, height: 16 }} />
+          </div>
+        )}
       </div>
 
       {/* Right Section */}
       <div className="header-right">
-        {/* Streak Badge */}
+        {/* Streak Badge — chỉ icon trên mobile */}
         <div className="streak-badge">
           <img src={ICONS.streak} alt="streak" style={{ width: 20, height: 24 }} />
-          <span className="streak-text">Khám phá streak</span>
+          {!isMobile && <span className="streak-text">Khám phá streak</span>}
         </div>
 
         {/* Notification Bell */}

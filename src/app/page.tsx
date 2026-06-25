@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Layout, Drawer } from "antd";
+import { Layout, Drawer, Grid } from "antd";
 import AppHeader from "@/components/AppHeader";
 import AppSidebar from "@/components/AppSidebar";
 import GreetingSection from "@/components/GreetingSection";
@@ -13,19 +13,18 @@ import TestPracticeCard from "@/components/TestPracticeCard";
 import LearningProfile from "@/components/LearningProfile";
 
 const { Content } = Layout;
+const { useBreakpoint } = Grid;
 
 export default function HomePage() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [sidebarPinned, setSidebarPinned] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
+  const screens = useBreakpoint();
+  const isDesktop = !!screens.lg;
 
+  // Đóng drawer khi chuyển lên desktop
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 992px)");
-    setIsDesktop(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
+    if (isDesktop) setDrawerOpen(false);
+  }, [isDesktop]);
 
   const handleMenuClick = () => {
     if (isDesktop) {
@@ -40,18 +39,20 @@ export default function HomePage() {
       {/* Fixed Header */}
       <AppHeader onMenuClick={handleMenuClick} />
 
-      {/* Hover trigger strip - hidden on mobile via CSS */}
-      <div className="sider-hover-trigger" />
+      {/* Hover trigger strip — desktop only */}
+      {isDesktop && <div className="sider-hover-trigger" />}
 
       {/* Desktop Sidebar */}
-      <div
-        className={`app-sider${sidebarPinned ? " sider-pinned" : ""}`}
-        style={{ width: 240 }}
-      >
-        <AppSidebar />
-      </div>
+      {isDesktop && (
+        <div
+          className={`app-sider${sidebarPinned ? " sider-pinned" : ""}`}
+          style={{ width: 240 }}
+        >
+          <AppSidebar />
+        </div>
+      )}
 
-      {/* Mobile Drawer Sidebar */}
+      {/* Mobile/Tablet Drawer Sidebar */}
       <Drawer
         placement="left"
         open={drawerOpen}
@@ -72,18 +73,10 @@ export default function HomePage() {
             {/* Greeting */}
             <GreetingSection />
 
-            {/* Two-column layout */}
-            <div
-              style={{
-                display: "flex",
-                gap: 32,
-                flexWrap: "wrap-reverse",
-                alignItems: "stretch",
-                paddingTop: 20,
-              }}
-            >
-              {/* Left Column - Main Content */}
-              <div style={{ flex: "1 1 500px", minWidth: 0 }}>
+            {/* Two-column layout dùng Ant Design breakpoint */}
+            <div className="page-columns">
+              {/* Left Column */}
+              <div className="page-col-main">
                 <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>
                   {/* Daily Goal */}
                   <DailyGoalCard />
@@ -118,8 +111,8 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Right Column - Learning Profile */}
-              <div style={{ flex: "0 0 352px", minWidth: 280 }}>
+              {/* Right Column — Learning Profile */}
+              <div className="page-col-side">
                 <LearningProfile />
               </div>
             </div>

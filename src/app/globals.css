@@ -1,5 +1,8 @@
 /* =============================================
    TeacherDung - Global Styles
+   Responsive với Ant Design breakpoints:
+   xs: <576px | sm: ≥576px | md: ≥768px
+   lg: ≥992px | xl: ≥1200px | xxl: ≥1600px
    ============================================= */
 
 *,
@@ -25,12 +28,14 @@ body {
 }
 
 /* =============================================
-   Layout Overrides
+   Layout
    ============================================= */
 
 .app-layout {
   min-height: 100vh;
 }
+
+/* ── Header ────────────────────────────────── */
 
 .app-header {
   position: fixed;
@@ -39,14 +44,17 @@ body {
   right: 0;
   z-index: 100;
   height: 64px;
-  padding: 12px 16px;
+  padding: 0 16px;
   border-bottom: 1px solid #f2f4f7;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #ffffff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  gap: 8px;
 }
+
+/* ── Sidebar ────────────────────────────────── */
 
 .app-sider {
   position: fixed;
@@ -58,18 +66,19 @@ body {
   overflow-x: hidden;
   background: #ffffff;
   border-right: 1px solid #f2f4f7;
+  width: 240px;
   transform: translateX(-100%);
   transition: transform 0.25s ease;
 }
 
-/* Show sidebar on trigger hover, self hover, or pinned */
+/* Show on hover-strip hover, self-hover, or pinned */
 .sider-hover-trigger:hover + .app-sider,
 .app-sider:hover,
 .app-sider.sider-pinned {
   transform: translateX(0);
 }
 
-/* Hover trigger strip on the left edge */
+/* Thin hover strip */
 .sider-hover-trigger {
   position: fixed;
   top: 64px;
@@ -80,14 +89,7 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 991px) {
-  .app-sider {
-    display: none;
-  }
-  .sider-hover-trigger {
-    display: none;
-  }
-}
+/* ── Main Content ───────────────────────────── */
 
 .app-content {
   margin-top: 64px;
@@ -97,16 +99,91 @@ body {
   transition: margin-left 0.25s ease;
 }
 
-/* Shift content when sidebar is visible */
+/* Shift content right when sidebar visible (desktop only) */
 .sider-hover-trigger:hover ~ .app-content,
 .app-sider:hover ~ .app-content,
 .app-sider.sider-pinned ~ .app-content {
   margin-left: 240px;
 }
 
-@media (max-width: 991px) {
-  .app-content {
-    margin-left: 0;
+.main-scroll {
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  padding: 32px;
+  background-image: url("https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F70d0757e0f1a4cb7b2e18a65cc3ecd401ef8a11c.svg?generation=1782387690337057&alt=media");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.content-wrapper {
+  max-width: 1141px;
+  margin: 0 auto;
+}
+
+/* ── Two-column layout ──────────────────────── */
+
+.page-columns {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+/* Left column grows, never shrinks below 0 */
+.page-col-main {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Right column: fixed 352px on large screens */
+.page-col-side {
+  flex: 0 0 352px;
+  min-width: 0;
+  width: 352px;
+}
+
+/* =============================================
+   Responsive — Mobile (< 768px)
+   ============================================= */
+@media (max-width: 767px) {
+  .main-scroll {
+    padding: 16px;
+    height: auto;
+    min-height: calc(100vh - 64px);
+  }
+
+  /* Stack columns vertically on mobile */
+  .page-columns {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Both columns full width */
+  .page-col-main,
+  .page-col-side {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  /* Right column (LearningProfile) goes above main on mobile */
+  .page-col-side {
+    order: -1;
+  }
+}
+
+/* =============================================
+   Responsive — Tablet (768px – 1199px)
+   ============================================= */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .main-scroll {
+    padding: 24px;
+  }
+
+  /* Right column slightly narrower */
+  .page-col-side {
+    flex: 0 0 300px;
+    width: 300px;
   }
 }
 
@@ -117,60 +194,71 @@ body {
 .header-left {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 
 .logo-img {
-  height: 30px;
+  height: 28px;
   display: block;
+  flex-shrink: 0;
 }
 
+/* Program badge */
 .program-badge {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: #f5fcff;
   border: 1px solid #cce8ff;
   border-radius: 62px;
-  padding: 8px 16px;
+  padding: 6px 12px;
   cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .program-badge-text {
   color: #566681;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .program-badge-value {
   color: #0060fd;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
 }
 
+/* Streak badge */
 .streak-badge {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: #fffbf5;
   border-radius: 24px;
-  padding: 4px 12px;
+  padding: 4px 10px;
   height: 36px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .streak-text {
   color: #ff9305;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
+  white-space: nowrap;
 }
 
+/* Notification bell */
 .notification-btn {
   position: relative;
   width: 36px;
@@ -183,6 +271,7 @@ body {
   justify-content: center;
   cursor: pointer;
   outline: none;
+  flex-shrink: 0;
 }
 
 .notif-badge {
@@ -202,13 +291,15 @@ body {
   justify-content: center;
 }
 
+/* Avatar */
 .avatar-btn {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border: 1px solid #d8dee9;
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .avatar-btn img {
@@ -217,9 +308,10 @@ body {
   object-fit: cover;
 }
 
+/* Hamburger button */
 .menu-trigger-btn {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   background: #f2f4f7;
   border: none;
   border-radius: 50%;
@@ -227,12 +319,13 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 0 0 4px #d3eaff;
+  box-shadow: 0 0 0 3px #d3eaff;
   outline: none;
+  flex-shrink: 0;
 }
 
 /* =============================================
-   Sidebar
+   Sidebar Nav
    ============================================= */
 
 .sidebar-nav {
@@ -240,7 +333,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 12px;
+  gap: 4px;
 }
 
 .nav-item {
@@ -290,29 +383,7 @@ body {
   font-size: 14px;
   cursor: pointer;
   justify-content: center;
-}
-
-/* =============================================
-   Main Content Area
-   ============================================= */
-
-.main-scroll {
-  max-height: calc(100vh - 64px);
-  overflow-y: auto;
-  padding: 32px;
-  background-image: url("https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F70d0757e0f1a4cb7b2e18a65cc3ecd401ef8a11c.svg?generation=1782387690337057&alt=media");
-  background-size: auto;
-}
-
-@media (max-width: 767px) {
-  .main-scroll {
-    padding: 16px;
-  }
-}
-
-.content-wrapper {
-  max-width: 1141px;
-  margin: 0 auto;
+  margin-top: auto;
 }
 
 /* =============================================
@@ -325,7 +396,7 @@ body {
   gap: 16px;
   padding-bottom: 20px;
   border-bottom: 1px solid #ebf0f4;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .greeting-avatar {
@@ -337,16 +408,16 @@ body {
 }
 
 .greeting-name {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #05060f;
-  line-height: 30px;
+  line-height: 28px;
 }
 
 .greeting-sub {
   font-size: 14px;
   color: #4b5563;
-  line-height: 21px;
+  line-height: 20px;
 }
 
 /* =============================================
@@ -357,16 +428,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   flex-wrap: wrap;
   gap: 8px;
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #23242d;
-  line-height: 30px;
+  line-height: 28px;
 }
 
 .section-link {
@@ -384,11 +455,11 @@ body {
   background: linear-gradient(185deg, #0071f9 -8.25%, #2ea7ff 95.92%);
   border-radius: 24px;
   padding: 16px 8px 8px;
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .daily-goal-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.5px;
@@ -402,34 +473,40 @@ body {
   border-radius: 20px;
   padding: 8px;
   position: relative;
+  /* Tạo khoảng trên cho mascot bubble */
+  margin-top: 60px;
 }
 
 .mascot-bubble {
   position: absolute;
   bottom: 100%;
   right: 0;
-  max-width: 486px;
+  left: 0;
   z-index: 10;
   display: flex;
   align-items: center;
-  margin-right: 12px;
+  margin: 0 8px 4px;
+  /* Giới hạn chiều rộng tối đa */
+  max-width: 100%;
 }
 
 .mascot-bubble-text {
   background: #233876;
   border-radius: 20px;
-  padding: 16px;
+  padding: 12px 16px;
   color: white;
   font-weight: 600;
+  font-size: 13px;
   position: relative;
   flex: 1;
+  min-width: 0;
 }
 
 .mascot-bubble-text::after {
   content: "";
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   top: 50%;
   right: -4px;
   background: #233876;
@@ -439,6 +516,9 @@ body {
 .mascot-img {
   margin-left: 8px;
   align-self: flex-end;
+  flex-shrink: 0;
+  height: 64px;
+  width: auto;
 }
 
 .goal-task-item {
@@ -476,8 +556,8 @@ body {
   color: white;
   border: none;
   border-radius: 16px;
-  padding: 8px;
-  width: 105px;
+  padding: 8px 12px;
+  min-width: 80px;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
@@ -486,13 +566,6 @@ body {
   gap: 4px;
   justify-content: center;
   flex-shrink: 0;
-}
-
-.goal-task-locked {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 12px;
 }
 
 .goal-task-locked-text {
@@ -549,17 +622,12 @@ body {
 }
 
 .lesson-title {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: #23242d;
-  line-height: 30px;
+  line-height: 24px;
   overflow: hidden;
-  max-width: calc(100% - 80px);
-}
-
-.lesson-progress-text {
-  color: #6b7280;
-  font-size: 14px;
+  /* Không hardcode max-width, dùng overflow cha */
 }
 
 .lesson-continue-btn {
@@ -571,6 +639,7 @@ body {
   font-size: 14px;
   cursor: pointer;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* =============================================
@@ -626,10 +695,13 @@ body {
 .course-title {
   font-weight: 700;
   color: #05060f;
-  font-size: 16px;
-  line-height: 24px;
-  min-height: 48px;
+  font-size: 15px;
+  line-height: 22px;
+  min-height: 44px;
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .course-meta {
@@ -642,7 +714,7 @@ body {
 }
 
 .course-units {
-  font-size: 14px;
+  font-size: 13px;
   color: #6b7280;
 }
 
@@ -650,7 +722,7 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 14px;
+  font-size: 13px;
   color: #6b7280;
 }
 
@@ -660,24 +732,20 @@ body {
 
 .test-practice-card {
   background: white;
-  border-radius: 32px;
+  border-radius: 24px;
   border: 1px solid #ebf0f4;
   padding: 20px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
 }
 
 .test-info {
   display: flex;
   gap: 12px;
-  flex: 1;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .test-thumbnail {
-  width: 104px;
+  width: 80px;
   border-radius: 8px;
   flex-shrink: 0;
   object-fit: cover;
@@ -686,8 +754,9 @@ body {
 .test-details {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   flex: 1;
+  min-width: 0;
 }
 
 .test-in-progress-badge {
@@ -695,23 +764,40 @@ body {
   align-items: center;
   gap: 4px;
   font-weight: 700;
+  font-size: 13px;
   color: #0071f9;
 }
 
 .test-title {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 28px;
+  line-height: 24px;
   color: #23242d;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  /* Cho phép wrap thay vì nowrap cứng */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.test-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
 }
 
 .test-subtitle {
   font-weight: 500;
   color: #6b7280;
+  font-size: 13px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .test-continue-btn {
@@ -728,6 +814,7 @@ body {
   align-items: center;
   gap: 8px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* =============================================
@@ -735,10 +822,10 @@ body {
    ============================================= */
 
 .profile-card {
-  background: linear-gradient(0deg, #ffffff 50%, #f3f8ff 100%);
   border: 1px solid #e1effe;
   border-radius: 20px;
   padding: 20px;
+  background: linear-gradient(0deg, #ffffff 50%, #f3f8ff 100%);
 }
 
 .profile-section-title {
@@ -749,16 +836,16 @@ body {
 }
 
 .level-section {
-  padding-bottom: 20px;
+  padding-bottom: 16px;
   border-bottom: 1px solid #e1effe;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .level-label {
   font-weight: 500;
   color: #23242d;
-  font-size: 14px;
-  margin-bottom: 16px;
+  font-size: 13px;
+  margin-bottom: 12px;
 }
 
 .level-row {
@@ -806,16 +893,16 @@ body {
 }
 
 .level-sublabel {
-  font-size: 13px;
+  font-size: 12px;
   color: #727e90;
   margin-top: 4px;
 }
 
 .level-value {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #152946;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .level-value.predicted {
@@ -829,14 +916,15 @@ body {
 .summary-title {
   font-weight: 600;
   color: #23242d;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  font-size: 15px;
 }
 
 .summary-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .summary-item:last-child {
@@ -851,11 +939,12 @@ body {
 
 .summary-label {
   flex: 1;
-  font-size: 14px;
+  font-size: 13px;
   color: #4b5563;
 }
 
 .summary-value {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
+  flex-shrink: 0;
 }

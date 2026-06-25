@@ -63,7 +63,6 @@ export default function DailyGoalCard() {
             src={ICONS.mascot}
             alt="Mascot Icon"
             className="mascot-img"
-            style={{ width: "auto", height: 80 }}
           />
         </div>
 
