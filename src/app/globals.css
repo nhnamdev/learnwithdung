@@ -2200,6 +2200,9 @@ body {
 
 @media (max-width: 767px) {
   .tabs-navigation {
+    margin: 0 auto;
+    width: fit-content;
+    justify-content: center;
     overflow-x: auto;
     white-space: nowrap;
     padding: 6px;
