@@ -9,37 +9,37 @@ const COURSES = [
     id: "toeic-lr-800",
     title: "TOEIC LR 800+",
     image:
-      "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2Feb7c1e039aa05154d1e84249cce2e9a995dcb06f.jpg?generation=1782387690524090&alt=media",
+      "/assets/eb7c1e039aa05154d1e8_4ef10dbd.jpg",
     studiedUnits: 2,
     totalUnits: 32,
     studiedLessons: 1,
     totalLessons: 64,
     exerciseIcon:
-      "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2Fd973cbfe6435a0d1a31bfd0987952a78b0d02119.svg?generation=1782387732350811&alt=media",
+      "/assets/d973cbfe6435a0d1a31b_2a72ccfc.svg",
   },
   {
     id: "toeic-lr-600",
     title: "TOEIC LR 600+",
     image:
-      "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F30b48594c71f47ba5acf730c0cbf12221d751109.jpg?generation=1782387690533911&alt=media",
+      "/assets/30b48594c71f47ba5acf_4ec9df40.jpg",
     studiedUnits: 2,
     totalUnits: 43,
     studiedLessons: 3,
     totalLessons: 86,
     exerciseIcon:
-      "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F2d184cc465f831481c5d757b99127024c7fcdbbc.svg?generation=1782387732344931&alt=media",
+      "/assets/2d184cc465f831481c5d_5695e792.svg",
   },
   {
     id: "toeic-vocab",
     title: "Từ Vựng TOEIC Chuyên Sâu",
     image:
-      "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F0aab811d48fbe42a4be7e8afda9f70fc1689f3ac.jpg?generation=1782387690534529&alt=media",
+      "/assets/0aab811d48fbe42a4be7_d3286638.jpg",
     studiedUnits: 2,
     totalUnits: 19,
     studiedLessons: 5,
     totalLessons: 38,
     exerciseIcon:
-      "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F95de878b39077b8c2891de4a636939db588caf75.svg?generation=1782387732318231&alt=media",
+      "/assets/95de878b39077b8c2891_2a95e11f.svg",
   },
 ];
 

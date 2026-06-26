@@ -34,8 +34,8 @@ const COURSES_DATA: Course[] = [
     href: "/courses/toan-9-khoa-he-2k12-63",
     title: "TOÁN 9 | KHÓA HÈ 2K12",
     is_hot: true,
-    hot_icon: "https://flashstudy.vn/_nuxt/hot.B9F-tCZm.png",
-    thumbnail: "https://cdn.flashstudy.vn/storage/flash-study/lessons/images/1780979822-khoa-he.jpg",
+    hot_icon: "/assets/hotB9F-tCZm_3b836ae8.png",
+    thumbnail: "/assets/1780979822-khoa-he_db3bba6c.jpg",
     teachers: ["Trung Anh Siêu Nhân"],
     options: ["video", "livestream"],
     videos: "18 Video",
@@ -51,8 +51,8 @@ const COURSES_DATA: Course[] = [
     href: "/courses/toan-12-khoa-l-nen-tang-12-2027-27",
     title: "TOÁN 12 | KHOÁ [L] NỀN TẢNG 12 2027",
     is_hot: true,
-    hot_icon: "https://flashstudy.vn/_nuxt/hot.B9F-tCZm.png",
-    thumbnail: "https://cdn.flashstudy.vn/storage/flash-study/lessons/images/1775702977-94-thuml-khoa-l.jpg",
+    hot_icon: "/assets/hotB9F-tCZm_3b836ae8.png",
+    thumbnail: "/assets/1775702977-94-thuml-_08f07fd3.jpg",
     teachers: ["Anh Giáo Kid"],
     options: ["video", "livestream"],
     videos: "38 Video",
@@ -65,8 +65,8 @@ const COURSES_DATA: Course[] = [
     href: "/courses/toan-12-khoa-f-he-thong-nen-tang-11-2027-23",
     title: "TOÁN 12 | KHOÁ [F] HỆ THỐNG NỀN TẢNG 11 2027",
     is_hot: true,
-    hot_icon: "https://flashstudy.vn/_nuxt/hot.B9F-tCZm.png",
-    thumbnail: "https://cdn.flashstudy.vn/storage/flash-study/lessons/images/1775031204-303-thuml-khoa-tong-on-200-kb.jpg",
+    hot_icon: "/assets/hotB9F-tCZm_3b836ae8.png",
+    thumbnail: "/assets/1775031204-303-thuml_e0f5cdc2.jpg",
     teachers: ["Anh Giáo Kid"],
     options: ["video", "livestream"],
     videos: "21 Video",
@@ -79,8 +79,8 @@ const COURSES_DATA: Course[] = [
     href: "/courses/500-cau-chong-sai-ngu-kinh-dien-toan-vat-ly-tieng-anh-50",
     title: "500 CÂU CHỐNG SAI NGU KINH ĐIỂN | TOÁN - VẬT LÝ - TIẾNG ANH",
     is_hot: true,
-    hot_icon: "https://flashstudy.vn/_nuxt/hot.B9F-tCZm.png",
-    thumbnail: "https://cdn.flashstudy.vn/storage/flash-study/lessons/images/1774865665-303-thuml-web-500-cau-chong-sai-ngu.jpg",
+    hot_icon: "/assets/hotB9F-tCZm_3b836ae8.png",
+    thumbnail: "/assets/1774865665-303-thuml_503b7a47.jpg",
     teachers: ["Anh Giáo Kid", "Tổ Vật Lý", "Tổ Tiếng Anh"],
     options: ["video", "livestream"],
     videos: "25 Video",
@@ -94,7 +94,7 @@ const COURSES_DATA: Course[] = [
     title: "TIẾNG ANH 10 | KHOÁ HỌC KÌ 2 - HS 2K11",
     is_hot: false,
     hot_icon: "",
-    thumbnail: "https://cdn.flashstudy.vn/storage/flash-study/lessons/images/1782388373-2.png",
+    thumbnail: "/assets/1782388373-2_9d3976ca.png",
     teachers: [],
     options: [],
     videos: "0 Video",
@@ -108,7 +108,7 @@ const COURSES_DATA: Course[] = [
     title: "TIẾNG ANH 11 | KHOÁ HỌC KÌ 2 - HS 2K10",
     is_hot: false,
     hot_icon: "",
-    thumbnail: "https://cdn.flashstudy.vn/storage/flash-study/lessons/images/1782388335-2.jpg",
+    thumbnail: "/assets/1782388335-2_0b3817c6.jpg",
     teachers: [],
     options: [],
     videos: "0 Video",
@@ -122,7 +122,7 @@ const COURSES_DATA: Course[] = [
     title: "TIẾNG ANH 10 | KHOÁ HỌC KÌ 1 - HS 2K11",
     is_hot: false,
     hot_icon: "",
-    thumbnail: "https://cdn.flashstudy.vn/storage/flash-study/lessons/images/1782388290-1.png",
+    thumbnail: "/assets/1782388290-1_6121c985.png",
     teachers: [],
     options: [],
     videos: "0 Video",
@@ -136,7 +136,7 @@ const COURSES_DATA: Course[] = [
     title: "TIẾNG ANH 11 | KHOÁ HỌC KÌ 1 - HS 2K10",
     is_hot: false,
     hot_icon: "",
-    thumbnail: "https://cdn.flashstudy.vn/storage/flash-study/lessons/images/1782388127-1.jpg",
+    thumbnail: "/assets/1782388127-1_f3a86a69.jpg",
     teachers: [],
     options: [],
     videos: "0 Video",
@@ -150,7 +150,7 @@ const COURSES_DATA: Course[] = [
     title: "TIẾNG ANH 9 | KHÓA HÈ 2K12",
     is_hot: false,
     hot_icon: "",
-    thumbnail: "https://cdn.flashstudy.vn/storage/flash-study/lessons/images/1782387428-1-khoa-he.jpg",
+    thumbnail: "/assets/1782387428-1-khoa-he_21a6149e.jpg",
     teachers: ["Tổ Tiếng Anh"],
     options: [],
     videos: "12 Video",
@@ -164,7 +164,7 @@ const COURSES_DATA: Course[] = [
     title: "TIẾNG ANH 9 | KHÓA NGỮ PHÁP TOÀN DIỆN",
     is_hot: false,
     hot_icon: "",
-    thumbnail: "https://cdn.flashstudy.vn/storage/flash-study/lessons/images/1782387742-1-khoa-ngu-phap-toan-dien.jpg",
+    thumbnail: "/assets/1782387742-1-khoa-ng_d576dea6.jpg",
     teachers: ["Tổ Tiếng Anh"],
     options: [],
     videos: "0 Video",
@@ -355,13 +355,13 @@ export default function MyCoursesPage() {
                                   <div className="card-course__options">
                                     {course.options.includes("video") && (
                                       <img
-                                        src="https://cdn.flashstudy.vn/storage/flash-study/study-modes/images/1766474256-video.png"
+                                        src="/assets/1766474256-video_0360702d.png"
                                         alt="Video"
                                       />
                                     )}
                                     {course.options.includes("livestream") && (
                                       <img
-                                        src="https://cdn.flashstudy.vn/storage/flash-study/study-modes/images/1766474256-livestream.png"
+                                        src="/assets/1766474256-livestrea_3449e942.png"
                                         alt="Livestream"
                                       />
                                     )}

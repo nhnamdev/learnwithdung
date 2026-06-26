@@ -3,13 +3,13 @@ import Link from "next/link";
 
 const ICONS = {
   testInProgress:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F0ca39006c483793ee7d7e29516dd0cd149a3b4ae.svg?generation=1782387732346232&alt=media",
+    "/assets/0ca39006c483793ee7d7_a737b285.svg",
   testPaper:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F318fe0518c88e1a6bec59ed305c25c72f61cbc29.svg?generation=1782387732345974&alt=media",
+    "/assets/318fe0518c88e1a6bec5_72ac9699.svg",
   arrowRight:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F2f73c49505a3006f84aabe56e096c5f264be2bdf.svg?generation=1782387732351037&alt=media",
+    "/assets/2f73c49505a3006f84aa_1f7689d7.svg",
   thumbnail:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F2a376c73587741f40134196ff37087452cc27ddf.png?generation=1782387690671219&alt=media",
+    "/assets/2a376c73587741f40134_82de242e.png",
 };
 
 export default function TestPracticeCard() {

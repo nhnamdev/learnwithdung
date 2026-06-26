@@ -6,13 +6,13 @@ import { Grid } from "antd";
 const { useBreakpoint } = Grid;
 
 const ICONS = {
-  menu: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F1a44982fbf1eaacf09c836f34b9c0eeae7df924f.svg?generation=1782387731977093&alt=media",
+  menu: "/assets/1a44982fbf1eaacf09c8_5eae9335.svg",
   logo: "/logo.png",
-  programIcon: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F312127ec3e81c86b48251e31b8f56ec33dccce7e.svg?generation=1782387731968819&alt=media",
-  chevronDown: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F1ceef3f6517e9ff843accde2489969cb30b1c560.svg?generation=1782387731971476&alt=media",
-  streak: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F8ba239a060b337b5175899886f196e5c3a68e05c.svg?generation=1782387731989024&alt=media",
-  bell: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F3a3f0536d83aeaf2f911e28cfbebdead85abda0e.svg?generation=1782387731960328&alt=media",
-  avatar: "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F5d5e5c98f63a53979d76e030afd9505c8e63372d.jpg?generation=1782387690181819&alt=media",
+  programIcon: "/assets/312127ec3e81c86b4825_e9dcfdde.svg",
+  chevronDown: "/assets/1ceef3f6517e9ff843ac_d05eb16e.svg",
+  streak: "/assets/8ba239a060b337b51758_3b5a2ca8.svg",
+  bell: "/assets/3a3f0536d83aeaf2f911_cdc3298d.svg",
+  avatar: "/assets/5d5e5c98f63a53979d76_3c61bd87.jpg",
 };
 
 interface AppHeaderProps {

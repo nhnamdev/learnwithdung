@@ -4,30 +4,30 @@ import React from "react";
 
 const ICONS = {
   bgPattern:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F9bbe6aeec7617c1a36531e8cbf0a0fa01a270c03.svg?generation=1782387690684425&alt=media",
+    "/assets/9bbe6aeec7617c1a3653_0d5eb2c9.svg",
   // LR Level icons
   lrEntry:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F77c326a365bbdc9fb3582897bd6b59ae700a9052.svg?generation=1782387732380471&alt=media",
+    "/assets/77c326a365bbdc9fb358_83b36b36.svg",
   lrPredicted:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F280443f906d7ff8fa86c500b4ef1f4ad28155de0.svg?generation=1782387732379961&alt=media",
+    "/assets/280443f906d7ff8fa86c_2f45f67f.svg",
   lrTarget:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F26920625fc5a70c6a52be2db05a5d1c68c96d91c.svg?generation=1782387732384159&alt=media",
+    "/assets/26920625fc5a70c6a52b_6632a3f8.svg",
   // SW Level icons
   swEntry:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2Fb84dc2845bd75ac4e0b1074aa7a14ff184819216.svg?generation=1782387732448060&alt=media",
+    "/assets/b84dc2845bd75ac4e0b1_309a2e1e.svg",
   swPredicted:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2Faf302f6b9b88d5ffae24fe4cf05961f1fe39b498.svg?generation=1782387732493584&alt=media",
+    "/assets/af302f6b9b88d5ffae24_06b1443a.svg",
   swTarget:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F637dd9fdf24f0c145c73a96520627f98ca950e32.svg?generation=1782387732515946&alt=media",
+    "/assets/637dd9fdf24f0c145c73_aad2b5ca.svg",
   // Summary icons
   totalTime:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F06fe3ec35e510f8767fc0039599054f8b8e26b63.svg?generation=1782387732496545&alt=media",
+    "/assets/06fe3ec35e510f8767fc_17d7f3a3.svg",
   totalCups:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2Ff3f09118b8ee262033a27bb5581263e325dddd3f.svg?generation=1782387732526245&alt=media",
+    "/assets/f3f09118b8ee262033a2_1583183c.svg",
   totalTests:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2Fd380841009a1b02130e2947d83cdad2c8289db1f.svg?generation=1782387732516897&alt=media",
+    "/assets/d380841009a1b02130e2_619dce7e.svg",
   totalLessons:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F03480a2a9d748e96bab7c194ae6e03d60e765d33.svg?generation=1782387732530105&alt=media",
+    "/assets/03480a2a9d748e96bab7_c5f082f9.svg",
 };
 
 interface LevelRowProps {

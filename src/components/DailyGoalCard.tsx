@@ -4,15 +4,15 @@ import React from "react";
 
 const ICONS = {
   studyPlan:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F02674230bedb9b76851d90a94a77bedceeac3187.svg?generation=1782387732141451&alt=media",
+    "/assets/02674230bedb9b76851d_8ec7ecd5.svg",
   exercises:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F86341846dcabb7986f98509428f42902b4a419f1.svg?generation=1782387732160885&alt=media",
+    "/assets/86341846dcabb7986f98_e6b19f83.svg",
   lessons:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F8f92e6e466f41d80da1e1729496fb3353869e76b.svg?generation=1782387732147793&alt=media",
+    "/assets/8f92e6e466f41d80da1e_679e8d8b.svg",
   locked:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F8027f50dce9f743bdb006be54695d1dd6240bfea.svg?generation=1782387732165921&alt=media",
+    "/assets/8027f50dce9f743bdb00_382e2975.svg",
   mascot:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2Fc4237cbf01eeccf22d2b19633ff3a0488e3abd40.svg?generation=1782387690354042&alt=media",
+    "/assets/c4237cbf01eeccf22d2b_dc757fb0.svg",
 };
 
 interface GoalTask {
