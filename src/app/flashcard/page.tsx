@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Layout, Grid, Drawer } from "antd";
 import AppHeader from "@/components/AppHeader";
 import AppSidebar from "@/components/AppSidebar";
+import FlashcardPageContent from "@/components/flashcard/FlashcardPageContent";
 
 const { Content } = Layout;
 const { useBreakpoint } = Grid;
@@ -57,22 +58,8 @@ export default function FlashcardPage() {
       {/* ── Main Content ── */}
       <Content className="app-content">
         <div className="main-scroll">
-          <div className="content-wrapper" style={{ padding: "40px 20px" }}>
-            <h1 className="section-title" style={{ marginBottom: 20 }}>
-              Flash Card
-            </h1>
-            <div
-              style={{
-                background: "white",
-                padding: "40px",
-                borderRadius: "12px",
-                boxShadow: "rgba(0, 0, 0, 0.05) 0px 1px 4px 0px",
-                textAlign: "center",
-                color: "#6b7280",
-              }}
-            >
-              Học từ vựng qua Flash Card đang được cập nhật...
-            </div>
+          <div className="content-wrapper" style={{ padding: "20px" }}>
+            <FlashcardPageContent />
           </div>
         </div>
       </Content>
