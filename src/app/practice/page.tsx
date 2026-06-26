@@ -21,7 +21,7 @@ export default function PracticePage() {
       setDrawerOpen(true);
     }
   };
-
+// ss
   return (
     <Layout className="app-layout">
       {/* ── Sticky header ── */}
