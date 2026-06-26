@@ -9,7 +9,7 @@ import {
   FullscreenOutlined,
 } from "@ant-design/icons";
 
-const PLAY_ICON = "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F5f41ca666790ad7191b8b1bf08446011078de55f.svg?generation=1782402653175793&alt=media";
+const PLAY_ICON = "/assets/5f41ca666790ad7191b8_d40728ed.svg";
 
 interface VideoPlayerProps {
   title: string;

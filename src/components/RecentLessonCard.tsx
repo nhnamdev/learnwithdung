@@ -5,15 +5,15 @@ import Link from "next/link";
 
 const ICONS = {
   lessonBadgeBg:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2Ffa884ee92db134183260b590ad6061014cc17932.svg?generation=1782387732160987&alt=media",
+    "/assets/fa884ee92db134183260_4a0d4c89.svg",
   clock:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F104e133ef77f1d166a92c02d16925a2fe0d34db8.svg?generation=1782387732188866&alt=media",
+    "/assets/104e133ef77f1d166a92_c4ea4133.svg",
   bookmark1:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2Fe95b1f81a0aea33c65a6c24eb880618782c705c7.svg?generation=1782387732177306&alt=media",
+    "/assets/e95b1f81a0aea33c65a6_8f689d79.svg",
   bookmark2:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2F55dac0cacdf0206ea8378baeccb76b977c06e94e.svg?generation=1782387732212076&alt=media",
+    "/assets/55dac0cacdf0206ea837_49d0ee7f.svg",
   bookmark3:
-    "https://storage.googleapis.com/download/storage/v1/b/prd-storytodesign.appspot.com/o/h2d-ext-asset%2Fb2379debc5377b824eaf20e9b403ac3957746999.svg?generation=1782387732281143&alt=media",
+    "/assets/b2379debc5377b824eaf_41058be2.svg",
 };
 
 export default function RecentLessonCard() {

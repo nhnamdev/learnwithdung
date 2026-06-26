@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "TeacherDung - Học tiếng Anh cùng PREP",
-  description: "Nền tảng học tiếng Anh với lộ trình cá nhân hóa, luyện TOEIC chuyên sâu cùng PREP.",
+  title: "TeacherDung - Học tiếng Anh cùng cô Dung",
+  description: "Nền tảng học tiếng Anh với lộ trình cá nhân hóa, luyện TOEIC chuyên sâu cùng Cô Dung.",
 };
 
 export default function RootLayout({
