@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   HomeOutlined,
   ReadOutlined,
   FileTextOutlined,
   BankOutlined,
   ThunderboltOutlined,
+  BookOutlined,
   UserOutlined,
   RocketOutlined,
 } from "@ant-design/icons";
@@ -46,6 +47,11 @@ const NAV_ITEMS: NavItem[] = [
     icon: <ThunderboltOutlined />,
   },
   {
+    key: "reading",
+    label: "Luyện Reading",
+    icon: <BookOutlined />,
+  },
+  {
     key: "profile",
     label: "Hồ sơ cá nhân",
     icon: <UserOutlined />,
@@ -56,6 +62,35 @@ interface AppSidebarProps {
   activeKey?: string;
 }
 
+function ReadingSidebarItem({ item, isActive }: { item: NavItem; isActive: boolean }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <Link
+      href="/reading"
+      onClick={(e) => {
+        e.preventDefault();
+      }}
+      style={{ textDecoration: "none", color: "inherit", cursor: "not-allowed" }}
+    >
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className={`nav-item${isActive ? " active" : ""}`}
+        style={{
+          cursor: "not-allowed",
+          color: hovered ? "#8a8a8e" : undefined,
+          backgroundColor: hovered ? "#f4f4f5" : undefined,
+        }}
+      >
+        <span className="nav-item-icon">{item.icon}</span>
+        <span className="nav-item-label">
+          {hovered ? "Sắp ra mắt" : item.label}
+        </span>
+      </div>
+    </Link>
+  );
+}
+
 export default function AppSidebar({ activeKey = "home" }: AppSidebarProps) {
   return (
     <nav className="sidebar-nav">
@@ -63,6 +98,13 @@ export default function AppSidebar({ activeKey = "home" }: AppSidebarProps) {
       <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 2 }}>
         {NAV_ITEMS.map((item) => {
           const isActive = item.key === activeKey;
+          
+          if (item.key === "reading") {
+            return (
+              <ReadingSidebarItem key={item.key} item={item} isActive={isActive} />
+            );
+          }
+
           const href = item.key === "home" ? "/" : `/${item.key}`;
           return (
             <Link
