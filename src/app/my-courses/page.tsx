@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Layout, Grid, Drawer, Input } from "antd";
 import AppHeader from "@/components/AppHeader";
 import AppSidebar from "@/components/AppSidebar";
@@ -186,6 +187,7 @@ const GRADES = [
 /* ── Main Component ────────────────────────── */
 
 export default function MyCoursesPage() {
+  const router = useRouter();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [sidebarPinned, setSidebarPinned] = useState(false);
   const [activeTab, setActiveTab] = useState<string>("all");
@@ -440,7 +442,14 @@ export default function MyCoursesPage() {
                                   </span>
                                 )}
                               </div>
-                              <button className="btn card-course__cta">
+                              <button 
+                                className="btn card-course__cta"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  router.push("/lesson");
+                                }}
+                              >
                                 Học thử ngay
                               </button>
                             </div>

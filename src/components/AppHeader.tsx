@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Grid } from "antd";
+import Link from "next/link";
 
 const { useBreakpoint } = Grid;
 
@@ -39,21 +40,11 @@ export default function AppHeader({ onMenuClick }: AppHeaderProps) {
         </button>
 
         {/* Logo */}
-        <div style={{ overflow: "hidden", height: 30, flexShrink: 0 }}>
-          <img src={ICONS.logo} alt="logo-prep" className="logo-img" />
-        </div>
-
-        {/* Program Badge — ẩn label dài trên mobile */}
-        {!isMobile && (
-          <div className="program-badge">
-            <img src={ICONS.programIcon} alt="program" style={{ width: 16, height: 16 }} />
-            {!isTablet && (
-              <span className="program-badge-text">Chương trình bạn chọn:</span>
-            )}
-            <span className="program-badge-value">TOEIC</span>
-            <img src={ICONS.chevronDown} alt="chevron" style={{ width: 16, height: 16 }} />
+        <Link href="/" style={{ display: "block", marginLeft: 16, cursor: "pointer" }}>
+          <div style={{ overflow: "hidden", height: 30, flexShrink: 0 }}>
+            <img src={ICONS.logo} alt="logo-prep" className="logo-img" />
           </div>
-        )}
+        </Link>
       </div>
 
       {/* Right Section */}

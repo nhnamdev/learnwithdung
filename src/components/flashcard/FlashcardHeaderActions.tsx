@@ -17,7 +17,7 @@ export default function FlashcardHeaderActions() {
   return (
     <div className="flashcard-header-actions">
       <Space size={12} wrap className="fc-action-left">
-        <Link href="/" passHref legacyBehavior>
+        <Link href="/">
           <Button 
             type="primary" 
             icon={<ArrowLeftOutlined />} 
@@ -26,7 +26,7 @@ export default function FlashcardHeaderActions() {
             Quay trở lại
           </Button>
         </Link>
-        <Link href="/lesson" passHref legacyBehavior>
+        <Link href="/lesson">
           <Button 
             type="primary" 
             icon={<BookOutlined />} 
@@ -35,7 +35,7 @@ export default function FlashcardHeaderActions() {
             Trở lại trang học tập
           </Button>
         </Link>
-        <Link href="/practice" passHref legacyBehavior>
+        <Link href="/practice">
           <Button 
             type="primary" 
             icon={<TrophyOutlined />} 

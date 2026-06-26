@@ -348,7 +348,7 @@ export default function FlashcardPageContent() {
         open={isCreateOpen}
         onCancel={() => setIsCreateOpen(false)}
         footer={null}
-        destroyOnClose
+        destroyOnHidden
       >
         <Form 
           form={form} 
