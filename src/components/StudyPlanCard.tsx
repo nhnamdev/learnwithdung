@@ -7,7 +7,7 @@ export default function StudyPlanCard() {
     <div className="study-plan-empty">
       <p style={{ color: "#727e90", lineHeight: "20px" }}>
         Ôi! Bạn chưa có kế hoạch học tập nào cho chương trình này rồi. Hãy
-        cùng Prep xây dựng Study Plan riêng của bạn ngay nào!
+        cùng Cô Dung xây dựng Study Plan riêng của bạn ngay nào!
       </p>
       <button className="study-plan-cta-btn">
         <span>Khởi tạo</span>

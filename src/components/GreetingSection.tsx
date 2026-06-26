@@ -15,7 +15,7 @@ export default function GreetingSection() {
       />
       <div>
         <p className="greeting-name">Xin chào, Huỳnh Tấn Toàn</p>
-        <p className="greeting-sub">Cùng Prep tiến bộ mỗi ngày nào!</p>
+        <p className="greeting-sub">Cùng Cô Dung tiến bộ mỗi ngày nào!</p>
       </div>
     </div>
   );
