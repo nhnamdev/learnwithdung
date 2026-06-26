@@ -2208,9 +2208,10 @@ body {
     padding: 6px;
     -webkit-overflow-scrolling: touch;
   }
-  
+
   .tabs-navigation::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for clean mobile tabs */
+    display: none;
+    /* Hide scrollbar for clean mobile tabs */
   }
 }
 
@@ -2326,7 +2327,8 @@ body {
 .card-course__thumb {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 */
+  padding-top: 56.25%;
+  /* 16:9 */
   overflow: hidden;
 }
 
@@ -2643,7 +2645,7 @@ body {
   .teacher-intro__left {
     max-width: 260px;
   }
-  
+
   .home-page__teacher-intro {
     padding: 24px 0;
   }
