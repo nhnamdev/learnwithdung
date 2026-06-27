@@ -4,112 +4,11 @@ import React from "react";
 
 /* ── Types ─────────────────────────────────── */
 
-interface Story {
-  id: string;
-  name: string;
-  image: string;
-  avatar?: string;
-  href: string;
-}
+import { STORIES, Story } from "@/data/stories";
 
 /* ── Static data (from outerHTML) ───────────── */
 
 const DEFAULT_AVATAR = "https://ui-avatars.com/api/?background=e1effe&color=0071f9&size=70&name=";
-
-const STORIES: Story[] = [
-  {
-    id: "6a3891c042202c3bca448638",
-    name: "Nguyễn Thị Thư Thái",
-    image: "/assets/76557864_279d9e6e.png",
-    href: "/story?id=6a3891c042202c3bca448638",
-  },
-  {
-    id: "6a37ec6742202c3bca4485c7",
-    name: "Võ Hà My",
-    image: "/assets/74498534_c4223820.PNG",
-    avatar: "/assets/37512322_08c67ff0.jpg",
-    href: "/story?id=6a37ec6742202c3bca4485c7",
-  },
-  {
-    id: "6a37e6de42202c3bca4485bb",
-    name: "Nguyễn Ngọc Minh Vy",
-    image: "/assets/48801408_b0db1f8d.png",
-    href: "/story?id=6a37e6de42202c3bca4485bb",
-  },
-  {
-    id: "6a37e66842202c3bca4485ba",
-    name: "Đặng Đức Tâm",
-    image: "/assets/13536128_af71833f.jpg",
-    href: "/story?id=6a37e66842202c3bca4485ba",
-  },
-  {
-    id: "6a37aae142202c3bca448585",
-    name: "Trần Hương Giang",
-    image: "/assets/83975440_34800975.jpeg",
-    href: "/story?id=6a37aae142202c3bca448585",
-  },
-  {
-    id: "6a37a60942202c3bca448580",
-    name: "Nguyễn Ngọc Bảo Trang",
-    image: "/assets/28916544_3e20ba87.jpg",
-    avatar: "/assets/65388111_aa5a071a.jpg",
-    href: "/story?id=6a37a60942202c3bca448580",
-  },
-  {
-    id: "6a36bfe342202c3bca44856e",
-    name: "Hán Phương Linh",
-    image: "/assets/42523700_c6ec254d.png",
-    href: "/story?id=6a36bfe342202c3bca44856e",
-  },
-  {
-    id: "6a36aec842202c3bca448546",
-    name: "Nguyễn Hữu Hải",
-    image: "/assets/9817596_642aeff7.png",
-    href: "/story?id=6a36aec842202c3bca448546",
-  },
-  {
-    id: "6a36a50842202c3bca448539",
-    name: "Bảo Ngân",
-    image: "/assets/24451553_7a557e16.png",
-    href: "/story?id=6a36a50842202c3bca448539",
-  },
-  {
-    id: "6a367ed442202c3bca448515",
-    name: "Nguyễn Như Ngọc",
-    image: "/assets/91983714_d66b6c98.jpg",
-    href: "/story?id=6a367ed442202c3bca448515",
-  },
-  {
-    id: "6a364a8942202c3bca4484c4",
-    name: "Nguyễn hữu trường Giang",
-    image: "/assets/55143194_de1dc2e5.jpg",
-    href: "/story?id=6a364a8942202c3bca4484c4",
-  },
-  {
-    id: "6a350b8942202c3bca448363",
-    name: "Quỳnh Hân",
-    image: "/assets/84190869_823920e9.png",
-    href: "/story?id=6a350b8942202c3bca448363",
-  },
-  {
-    id: "6a34cab242202c3bca4482ec",
-    name: "Phạm Xuân Bách",
-    image: "/assets/51935025_c892832f.jpeg",
-    href: "/story?id=6a34cab242202c3bca4482ec",
-  },
-  {
-    id: "6a3405d342202c3bca44822e",
-    name: "Lê Thị Cẩm Ly",
-    image: "/assets/45390353_e51afceb.png",
-    href: "/story?id=6a3405d342202c3bca44822e",
-  },
-  {
-    id: "6a33ff2e42202c3bca448201",
-    name: "Nguyễn Việt Phú",
-    image: "/assets/71534143_dbb6683c.PNG",
-    href: "/story?id=6a33ff2e42202c3bca448201",
-  },
-];
 
 /* ── Sub-components ─────────────────────────── */
 
